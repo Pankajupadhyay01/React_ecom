@@ -1,33 +1,17 @@
 import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
-import nav from '../data/nav';
-import { BiCartAlt } from 'react-icons/Bi';
-import { FaSearch } from 'react-icons/fa';
+import { BiCartAlt } from 'react-icons/Bi'; 
 import { GoPerson } from 'react-icons/Go';
 import SearchBar from './SearchBar';
 
 const Navbar = () => {
   const [search, setsearch] = useState(false)
-  console.log(search);
   return (
     <div>
-      {/* upper Navbar Started*/}
-      <nav className='bg-white my-1'>
-        <div className='flex justify-center items-center mx-5'>
-          <ul className='flex'>
-            {
-              nav.map((obj, i) => (
-                <li key={i} className='mx-2 text-gray-400 hover:text-black'>
-                  <Link to={obj.link}>
-                    {obj.name}
-                  </Link>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </nav>
-      {/* upper Navbar Completed */}
+      {/* upper Upper Text Started*/}
+      <div className='flex justify-center bg-slate-50 text-md'>
+        Set High Quality Product on 50% discount Price use <span className='mx-1 text-blue-900 font-bold'> Sup50Get</span>
+      </div>
+      {/* upper Upper Text Completed */}
 
 
       {/* Main Navbar */}
@@ -43,17 +27,19 @@ const Navbar = () => {
           <div className='hidden md:flex'>
             <SearchBar />
           </div>
+
           {/* Links  */} 
-          <div className='flex justify-center items-center space-x-4'>
+          <ul className='flex justify-center items-center space-x-4'>
             <li className={`list-none text-3xl text-blue-800 md:hidden`} onClick={() => setsearch(!search)}><ion-icon name={search?"close-outline":"search-outline"}></ion-icon></li>
             <li className='list-none text-3xl text-blue-800'><BiCartAlt /></li>
             <li className='list-none text-3xl text-blue-800'><GoPerson /></li>
-          </div>
+          </ul>
 
         </div>
         <div className={`${search?"flex":"hidden"} justify-center md:hidden`}>
           <SearchBar />
         </div>
+
       </nav>
       {/* Main Navbar Ended*/}
 

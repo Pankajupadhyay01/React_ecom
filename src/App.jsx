@@ -6,6 +6,7 @@ import {
   Route,
   BrowserRouter
 } from 'react-router-dom';
+import Footer from './Component/Footer';
 const App = () => {
   return (
 
@@ -14,11 +15,12 @@ const App = () => {
 
         <Navbar />
         <Routes>
-          <Route exact path='/' element={<Home />}/>
+          <Route exact path='/' element={<Home />} />
         </Routes>
+        <Footer/>
       </div>
-         </BrowserRouter>
-   
+    </BrowserRouter>
+
   )
 }
 
