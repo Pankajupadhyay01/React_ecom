@@ -1,6 +1,4 @@
-import { React, useState } from 'react';
-import { BiCartAlt } from 'react-icons/Bi'; 
-import { GoPerson } from 'react-icons/Go';
+import { React, useState } from 'react'; 
 import SearchBar from './SearchBar';
 
 const Navbar = () => {
@@ -31,8 +29,8 @@ const Navbar = () => {
           {/* Links  */} 
           <ul className='flex justify-center items-center space-x-4'>
             <li className={`list-none text-3xl text-blue-800 md:hidden`} onClick={() => setsearch(!search)}><ion-icon name={search?"close-outline":"search-outline"}></ion-icon></li>
-            <li className='list-none text-3xl text-blue-800'><BiCartAlt /></li>
-            <li className='list-none text-3xl text-blue-800'><GoPerson /></li>
+            <li className='list-none text-3xl text-blue-800'><ion-icon name="cart-outline"></ion-icon></li>
+            <li className='list-none text-3xl text-blue-800'><ion-icon name="person-outline"></ion-icon></li>
           </ul>
 
         </div>
