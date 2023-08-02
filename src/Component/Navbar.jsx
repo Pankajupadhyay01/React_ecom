@@ -4,11 +4,18 @@ import CategoryCard from './CategoryCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { updatemenu } from '../redux/productSlice';
 const Navbar = () => {
-  const [search, setsearch] = useState(false)
-  const menu = useSelector((state)=>state.user.menu) 
-  const dispatch = useDispatch()
-  const func = ()=>{
-    dispatch(updatemenu())    
+  
+  const [search, setsearch] = useState(false);
+  const menu = useSelector((state) => state.user.menu);
+  const dispatch = useDispatch();
+
+  const func = () => {
+    dispatch(updatemenu())
+    if (!menu) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
   }
   return (
     <div>
@@ -24,8 +31,8 @@ const Navbar = () => {
         <div className='flex justify-between align-middle items-center mx-3'>
 
           {/* Logo    */}
-          <div className='flex items-center space-x-1'> 
-            <div className={`${menu?"hidden":"flex"} lg:hidden text-blue-800 text-xl `} onClick={func}>
+          <div className='flex items-center space-x-1'>
+            <div className={`${menu ? "hidden" : "flex"} lg:hidden text-blue-800 text-xl `} onClick={func}>
               <ion-icon name="menu-outline"></ion-icon>
             </div>
             <div className='text-3xl md:text-4xl text-blue-800'>

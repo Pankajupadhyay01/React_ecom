@@ -11,7 +11,6 @@ const counterSlice = createSlice({
   reducers: {
     updatemenu:(state)=>{
         state.menu = !state.menu
-        console.log(state.menu);
     },
     updateStart: (state) => {
       state.loading = true

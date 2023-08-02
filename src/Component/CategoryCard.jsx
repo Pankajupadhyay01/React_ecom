@@ -11,8 +11,8 @@ const CategoryCard = () => {
     }
     return (
         < >
-            <div className={`lg:relative lg:bg-white lg:h-auto transition-all duration-75 left-[-100%] lg:w-full absolute bg-white rounded-xl lg:left-0 ${menu?"left-0":"left-[-100%]"} w-[80%] overflow-y-scroll sm:w-[60%] h-[90vh]`}>
-                <div className='border-2 h-full rounded-xl'>
+            <div className={`lg:relative lg:bg-white lg:h-auto transition-all duration-75 left-[-100%] lg:w-full absolute bg-white rounded-xl lg:left-0  ${menu?"left-0":"left-[-100%]"} w-[80%] lg:overflow-y-hidden overflow-y-scroll sm:w-[60%] h-[90vh]`}>
+                <div className='lg:border-none border-2 h-full rounded-xl'>
                     <div className='text-xl relative capitalize mx-[30px] font-bold rounded-xl lg:hidden'>
                         Categories
                         <div className='absolute top-1 text-2xl right-1' onClick={func}>
