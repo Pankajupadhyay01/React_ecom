@@ -1,46 +1,61 @@
-import { React, useState } from 'react'; 
+import { React, useState } from 'react';
 import SearchBar from './SearchBar';
-
+import CategoryCard from './CategoryCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { updatemenu } from '../redux/productSlice';
 const Navbar = () => {
   const [search, setsearch] = useState(false)
+  const menu = useSelector((state)=>state.user.menu) 
+  const dispatch = useDispatch()
+  const func = ()=>{
+    dispatch(updatemenu())    
+  }
   return (
     <div>
       {/* upper Upper Text Started*/}
       <div className='flex justify-center bg-slate-50 text-md'>
-        Set High Quality Product on 50% discount Price use <span className='mx-1 text-blue-900 font-bold'> Sup50Get</span>
+        Get 50% discount use <span className='mx-1 text-blue-900 font-bold'> Sup50Get</span>
       </div>
       {/* upper Upper Text Completed */}
 
 
       {/* Main Navbar */}
       <nav className='bg-white py-5'>
-        <div className='flex justify-between items-center mx-5'>
+        <div className='flex justify-between align-middle items-center mx-3'>
 
-          {/* Logo and Search bar  */}
-          <div className='flex space-x-8 items-center'>
-            <div className='text-4xl text-blue-800'>
+          {/* Logo    */}
+          <div className='flex items-center space-x-1'> 
+            <div className={`${menu?"hidden":"flex"} lg:hidden text-blue-800 text-xl `} onClick={func}>
+              <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div className='text-3xl md:text-4xl text-blue-800'>
               Lamda
             </div>
           </div>
+
+          {/* Search bar */}
           <div className='hidden md:flex'>
             <SearchBar />
           </div>
 
-          {/* Links  */} 
+          {/* Links  */}
           <ul className='flex justify-center items-center space-x-4'>
-            <li className={`list-none text-3xl text-blue-800 md:hidden`} onClick={() => setsearch(!search)}><ion-icon name={search?"close-outline":"search-outline"}></ion-icon></li>
-            <li className='list-none text-3xl text-blue-800'><ion-icon name="cart-outline"></ion-icon></li>
-            <li className='list-none text-3xl text-blue-800'><ion-icon name="person-outline"></ion-icon></li>
+            <li className={`list-none text-2xl md:text-3xl text-blue-800 flex items-center md:hidden`} onClick={() => setsearch(!search)}><ion-icon name={search ? "close-outline" : "search-outline"}></ion-icon></li>
+            <li className='list-none text-2xl md:text-3xl text-blue-800 flex items-center'><ion-icon name="cart-outline"></ion-icon></li>
+            <li className='list-none text-2xl md:text-3xl text-blue-800 flex items-center'><ion-icon name="person-outline"></ion-icon></li>
           </ul>
 
         </div>
-        <div className={`${search?"flex":"hidden"} justify-center md:hidden`}>
+        <div className={`${search ? "flex" : "hidden"} justify-center md:hidden`}>
           <SearchBar />
         </div>
 
       </nav>
       {/* Main Navbar Ended*/}
 
+      {/* Category Nav */}
+      <CategoryCard />
+      {/* Category Nav Ended */}
     </div>
   )
 }
