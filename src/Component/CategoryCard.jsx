@@ -25,7 +25,7 @@ const CategoryCard = () => {
                                 <div key={i} className='lg:w-full w-[calc(50%-10px)] sm:w-[calc(33.33%-10px)] my-[30px] justify-center flex items-center'>
                                     <Link to={"/"} className=''>
                                         <div className='flex justify-center h-[50px]'>
-                                            <img className='h-full' src={pro.img} alt="" />
+                                            <img className='h-full  ' src={pro.img} alt="" />
                                         </div>
                                         <div className='flex justify-center text-center'>
                                             {pro.name}
