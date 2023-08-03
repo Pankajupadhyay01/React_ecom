@@ -6,7 +6,8 @@ import {
   Route,
   BrowserRouter
 } from 'react-router-dom';
-import Footer from './Component/Footer';
+import Footer from './Component/Footer'; 
+import Categorypage from './Pages/Categorypage';
 const App = () => {
   return (
 
@@ -16,6 +17,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Home />} />
+          <Route exact path='/category/:data' element={<Categorypage />} />
         </Routes>
         <Footer/>
       </div>

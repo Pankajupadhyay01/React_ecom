@@ -1,10 +1,11 @@
 import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import CategoryCard from './CategoryCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { updatemenu } from '../redux/productSlice';
 const Navbar = () => {
-  
+
   const [search, setsearch] = useState(false);
   const menu = useSelector((state) => state.user.menu);
   const dispatch = useDispatch();
@@ -35,9 +36,10 @@ const Navbar = () => {
             <div className={`${menu ? "hidden" : "flex"} lg:hidden text-blue-800 text-xl `} onClick={func}>
               <ion-icon name="menu-outline"></ion-icon>
             </div>
-            <div className='text-3xl md:text-4xl text-blue-800'>
+            <Link to={"/"} className='text-3xl md:text-4xl text-blue-800'>
               Lamda
-            </div>
+
+            </Link >
           </div>
 
           {/* Search bar */}

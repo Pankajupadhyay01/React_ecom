@@ -23,7 +23,7 @@ const CategoryCard = () => {
                         {
                             category.map((pro, i) => (
                                 <div key={i} className='lg:w-full w-[calc(50%-10px)] sm:w-[calc(33.33%-10px)] my-[30px] justify-center flex items-center'>
-                                    <Link to={"/"} className=''>
+                                    <Link to={"/category/"+pro.name} className=''>
                                         <div className='flex justify-center h-[50px]'>
                                             <img className='h-full  ' src={pro.img} alt="" />
                                         </div>

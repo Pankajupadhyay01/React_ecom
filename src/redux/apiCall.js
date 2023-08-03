@@ -2,9 +2,9 @@ import axios from "axios"
 import { updateStart, updateProduct, updateErr } from './productSlice';
 
 export const productList = async ({ api }, dispatch) => {
-    dispatch(updateStart())
+    dispatch(updateStart()) 
     try {
-        await axios.get(`${api}`).then(res => {
+        await axios.get(`${api}`).then(res => { 
             dispatch(updateProduct(res.data))
         })
     } catch (error) {
@@ -35,10 +35,10 @@ export const productList = async ({ api }, dispatch) => {
 //     }
 // }
 
-// export const productCategory = async ({ category }, dispatch) => {
+// export const productCategory = async ({ name }, dispatch) => {
 //     dispatch(updateStart())
 //     try {
-//         await axios.get(`https://dummyjson.com/products/category/${category}`).then(res => {
+//         await axios.get(`https://dummyjson.com/products/category/${name}`).then(res => {
 //             dispatch(updateProduct(res.data))
 //         })
 //     } catch (error) {

@@ -6,13 +6,14 @@ const counterSlice = createSlice({
     product: [],
     err: false,
     loading: false,
-    menu:false
+    menu: false
   },
   reducers: {
-    updatemenu:(state)=>{
-        state.menu = !state.menu
+    updatemenu: (state) => {
+      state.menu = !state.menu
     },
     updateStart: (state) => {
+      state.product = []
       state.loading = true
     },
     updateProduct: (state, action) => {

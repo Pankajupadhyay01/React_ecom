@@ -21,7 +21,7 @@ export default [
     },
     {
         img: "https://images.meesho.com/images/marketing/1628502583496_128.webp",
-        name: "Jewellery"
+        name: "womens-jewellery"
     },
     {
         img: "https://www.boat-lifestyle.com/cdn/shop/collections/smartwatches_100x.png?v=1684827668",
