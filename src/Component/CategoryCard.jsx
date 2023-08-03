@@ -11,7 +11,7 @@ const CategoryCard = () => {
     }
     return (
         < >
-            <div className={`lg:relative lg:bg-white lg:h-auto transition-all duration-75 left-[-100%] lg:w-full absolute bg-white rounded-xl lg:left-0  ${menu?"left-0":"left-[-100%]"} w-[80%] lg:overflow-y-hidden overflow-y-scroll sm:w-[60%] h-[90vh]`}>
+            <div className={`lg:relative lg:bg-white lg:h-auto transition-all duration-75 lg:w-full absolute bg-white rounded-xl lg:left-0  ${menu?"left-0":"left-[-100%]"} w-[80%] lg:overflow-y-hidden overflow-y-scroll sm:w-[60%] h-[90vh]`}>
                 <div className='lg:border-none border-2 h-full rounded-xl'>
                     <div className='text-xl relative capitalize mx-[30px] font-bold rounded-xl lg:hidden'>
                         Categories
@@ -25,7 +25,7 @@ const CategoryCard = () => {
                                 <div key={i} className='lg:w-full w-[calc(50%-10px)] sm:w-[calc(33.33%-10px)] my-[30px] justify-center flex items-center'>
                                     <Link to={"/"} className=''>
                                         <div className='flex justify-center h-[50px]'>
-                                            <img src={pro.img} alt="" />
+                                            <img className='h-full' src={pro.img} alt="" />
                                         </div>
                                         <div className='flex justify-center text-center'>
                                             {pro.name}
