@@ -11,12 +11,13 @@ const counterSlice = createSlice({
   reducers: {
     updatemenu: (state) => {
       state.menu = !state.menu
+      // console.log(state.menu);
     },
-    updateStart: (state) => {
-      state.product = []
+    updateStart: (state) => { 
       state.loading = true
     },
     updateProduct: (state, action) => {
+      state.product =[]
       state.loading = false
       state.product = action.payload.products
     },
@@ -27,5 +28,5 @@ const counterSlice = createSlice({
   }
 })
 
-export const { updateStart, updateProduct, updateErr, updatemenu } = counterSlice.actions
+export const { updateStart, updateProduct, updateErr, updatemenu} = counterSlice.actions
 export default counterSlice.reducer

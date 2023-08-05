@@ -6,7 +6,7 @@ const Home = () => {
   const dispatch = useDispatch()
   const obj = useSelector((state) => state.user)
   useEffect(() => {
-    const api = "https://dummyjson.com/products?limit=50"
+    const api = "https://dummyjson.com/products"
     productList({ api }, dispatch)
   }, [])
 
@@ -19,7 +19,7 @@ const Home = () => {
           :
           <div className='w-[95%] flex-col flex m-auto'>
             <Toprated />
-            
+
           </div>
       }
     </div>

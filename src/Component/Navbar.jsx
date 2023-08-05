@@ -9,14 +9,14 @@ const Navbar = () => {
   const [search, setsearch] = useState(false);
   const menu = useSelector((state) => state.user.menu);
   const dispatch = useDispatch();
-
+  if (menu) {
+    document.body.style.overflow = "hidden"
+  } else {
+    document.body.style.overflow = "auto"
+  }
   const func = () => {
     dispatch(updatemenu())
-    if (!menu) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "auto"
-    }
+
   }
   return (
     <div>
@@ -38,7 +38,6 @@ const Navbar = () => {
             </div>
             <Link to={"/"} className='text-3xl md:text-4xl text-blue-800'>
               Lamda
-
             </Link >
           </div>
 
