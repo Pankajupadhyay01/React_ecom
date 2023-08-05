@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Component/LayoutFile/Navbar';
+import Detailcards from './Component/Cards/Datailcards'
 import Home from './Pages/Home';
 import {
   Routes,
@@ -18,6 +19,8 @@ const App = () => {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/category/:data' element={<Categorypage />} />
+          <Route exact path='/product/detail/:data' element={<Detailcards />} />
+
         </Routes>
         <Footer/>
       </div>
