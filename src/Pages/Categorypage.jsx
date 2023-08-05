@@ -11,8 +11,7 @@ const Categorypage = () => {
   useEffect(() => {
     const api = `https://dummyjson.com/products/category/${name}`
     productList({ api }, dispatch)
-  }, [name])
-  console.log("re-render");
+  }, [name]) 
   return (
     <div className='w-[95%] flex flex-col m-auto'>
       <Heading name={name} />

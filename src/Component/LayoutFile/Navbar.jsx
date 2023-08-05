@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import CategoryCard from './CategoryCard';
 import { useDispatch, useSelector } from 'react-redux';
-import { updatemenu } from '../redux/productSlice';
+import { updatemenu } from '../../redux/productSlice';
 const Navbar = () => {
 
   const [search, setsearch] = useState(false);

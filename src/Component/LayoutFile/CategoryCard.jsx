@@ -1,8 +1,8 @@
 import React from 'react'
-import category from '../data/category'
+import category from '../../data/category'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { updatemenu } from '../redux/productSlice';
+import { updatemenu } from '../../redux/productSlice';
 const CategoryCard = () => {
     const menu = useSelector((state) => state.user.menu)
     const dispatch = useDispatch()
