@@ -7,10 +7,9 @@ const Home = () => {
   const dispatch = useDispatch()
   const obj = useSelector((state) => state.user)
   useEffect(() => {
-    const api = "https://dummyjson.com/products"
+    const api = "https://dummyjson.com/products?limit=28"
     productList({ api }, dispatch)
   }, [])
-
 
   return (
     <div className=''>
