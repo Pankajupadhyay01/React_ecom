@@ -1,15 +1,16 @@
-import { React, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { productList } from '../redux/apiCall'
-import Toprated from '../Component/Cards/Toprated'
-import Displaycards from '../Component/Cards/Displaycards'
+import { React, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { productList } from '../redux/apiCall';
+import Toprated from '../Component/Cards/Toprated';
+import Displaycards from '../Component/Cards/Displaycards';
+import Heading from '../Component/Heading';
 const Home = () => {
   const dispatch = useDispatch()
-  const obj = useSelector((state) => state.user)
+  const obj = useSelector((state) => state.user);
   useEffect(() => {
     const api = "https://dummyjson.com/products?limit=28"
-    productList({ api }, dispatch)
-  }, [])
+    productList({ api }, dispatch);
+  }, []);
 
   return (
     <div className=''>
@@ -18,8 +19,10 @@ const Home = () => {
         obj.loading ? <div className='w-[full] m-auto flex justify-center'>loading...</div>
           :
           <div className='w-[95%] flex-col flex m-auto'>
+            <Heading name={"Top Rated"} />
             <Toprated />
-            <Displaycards/>
+            <Heading name={"Our Products"} />
+            <Displaycards />
           </div>
       }
     </div>

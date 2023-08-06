@@ -3,6 +3,7 @@ import Heading from '../Component/Heading'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { productList } from '../redux/apiCall'
+import Displaycards from '../Component/Cards/Displaycards'
 
 const Categorypage = () => {
   const name = useParams().data;
@@ -20,13 +21,7 @@ const Categorypage = () => {
           <div>loading..</div>
           :
           <div>
-            {
-              arr.product.map((pro, i) => (
-                <div key={i}>
-                  {pro.title}
-                </div>
-              ))
-            }
+            <Displaycards/>
           </div>
       }
 

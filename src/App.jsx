@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Navbar from './Component/LayoutFile/Navbar';
-import Detailcards from './Component/Cards/Datailcards'
 import Home from './Pages/Home';
 import {
   Routes,
   Route,
   BrowserRouter
 } from 'react-router-dom';
-import Footer from './Component/LayoutFile/Footer'; 
-import Categorypage from './Pages/Categorypage';
+import Footer from './Component/LayoutFile/Footer';
+const Categorypage = lazy(() => import("./Pages/Categorypage"))
+const Detailcards = lazy(() => import("./Component/Cards/Datailcards"))
+
 const App = () => {
   return (
 
@@ -18,11 +19,11 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='/category/:data' element={<Categorypage />} />
-          <Route exact path='/product/detail/:data' element={<Detailcards />} />
+          <Route exact path='/category/:data' element={<Suspense fallback="Loading..."> <Categorypage /> </Suspense>} />
+          <Route exact path='/product/detail/:data' element={<Suspense fallback="Loading..."> <Detailcards /> </Suspense>} />
 
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </BrowserRouter>
 
