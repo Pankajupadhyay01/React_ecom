@@ -10,7 +10,7 @@ const Categorypage = () => {
   const dispatch = useDispatch();
   const arr = useSelector((state) => state.user);
   useEffect(() => {
-    const api = `https://dummyjson.com/products/category/${name}`
+    const api = `https://dummyjson.com/products/category/${name}` 
     productList({ api }, dispatch)
   }, [name]) 
   return (
