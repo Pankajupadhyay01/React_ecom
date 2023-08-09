@@ -4,7 +4,7 @@ const Toprated = () => {
   const products = useSelector((state) => state.user.product);
   const [slide, setslide] = useState(1)
   return (
-    <div className='w-full h-full relative overflow-hidden flex'>
+    <div className='h-[50vh] w-full relative overflow-hidden flex'>
       <div className={`h-[350px] flex absolute left-[0]`} style={{ transform: `translateX(-${slide * 100}vw)` }}>
         {products.map((pro, i) => (
 
@@ -19,14 +19,7 @@ const Toprated = () => {
       </div>
       <div>next</div>
       <div>pre</div>
-      {/* {
-     
-    //  products.map((obj, i) => (
-    //    <div key={i}> translate-x-[-${2 * 100}vw]
-       
-    //    </div>
-    //    ))
-    //   } */}
+    
 
     </div >
   )
