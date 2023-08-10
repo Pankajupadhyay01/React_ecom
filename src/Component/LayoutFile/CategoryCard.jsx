@@ -19,7 +19,7 @@ const CategoryCard = () => {
                             <ion-icon name="close-circle-outline"></ion-icon>
                         </div>
                     </div>
-                    <div className='lg:flex-nowrap flex flex-wrap lg:h-auto justify-center overflow-y-auto h-[80vh] '>
+                    <div className='lg:flex-nowrap flex flex-wrap lg:h-[14vh] justify-center overflow-y-auto h-[80vh] '>
                         {
                             category.map((pro, i) => (
                                 <div key={i} className='lg:w-full w-[calc(50%-10px)] sm:w-[calc(33.33%-10px)] my-[30px] justify-center flex items-center'>
@@ -27,7 +27,7 @@ const CategoryCard = () => {
                                         <div className='flex justify-center h-[50px]'>
                                             <img className='h-full' src={pro.img} alt="" />
                                         </div>
-                                        <div className='flex justify-center text-center'>
+                                        <div className='flex justify-center text-[15px] text-center'>
                                             {pro.name}
                                         </div>
                                     </Link>

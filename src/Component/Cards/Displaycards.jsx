@@ -11,9 +11,9 @@ const Displaycards = () => {
 
           {
             obj.map((pro, i) => (
-              <Link to={"/product/detail/" + pro.id} key={i} className='flex flex-col justify-center items-center w-[90%] sm:w-[calc(50%-10px)] lg:w-[calc(25%-10px)] my-2 rounded-lg border-2 overflow-hidden'>
-                <div className='h-[34vh] overflow-hidden object-cover flex justify-center bg-white'>
-                  <img width={"100%"} height={"100%"} className='h-full w-full' src={pro?.images[0]} alt='Products' />
+              <Link to={"/product/detail/" + pro.id} key={i} className='flex flex-col justify-center items-centern w-[80%] sm:w-[calc(50%-10px)] md:w-[calc(33.33%-10px)] lg:w-[calc(25%-10px)] my-2 rounded-lg border-2 overflow-hidden'>
+                <div className='h-[180px] lg:h-[220px] overflow-hidden object-cover items-center m-auto flex justify-center bg-white'>
+                  <img width={"100%"} height={"100%"} className='h-full w-full' src={pro.thumbnail} alt='Products' />
                 </div>
                 <div className='w-full bg-blue-50'>
                   <div className='w-[90%] flex m-auto flex-col'>

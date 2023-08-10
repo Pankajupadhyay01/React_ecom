@@ -20,7 +20,7 @@ const Carousel = () => {
         setslide(slide<images.length-1?slide+1:0)
     }, 4500);
     return (
-        <div className='h-[65vh] '>
+        <div className='h-[50vh] md:h-[70vh] w-[99%] flex m-auto'>
             <div className='w-full h-full relative overflow-hidden flex'>
                 <div className={`h-full flex absolute left-[0]`} style={{ transform: `translateX(-${slide * 100}vw)` }}>
                     {images.map((pro, i) => (

@@ -7,20 +7,20 @@ const Datailcards = () => {
   const id = useParams().data;
   const dispatch = useDispatch()
   const result = useSelector((state) => state.user)
+  console.log();
   useEffect(() => {
     const api = `https://dummyjson.com/products/${id}`
     productDetail({ api }, dispatch)
-  }, [])
+  }, [id])
   return (
     <>
       {
         result.loading ? "loading..." :
 
-
-          <div>
-            <div className='flex my-4 flex-col md:flex-row w-[90%] md:w-[80%] justify-between m-auto items-center'>
-              <div className='md:w-[60%] overflow-hidden'>
-                <img className='w-full overflow-hidden' src={result.detail.thumbnail} alt="" />
+          <div >
+            <div className='my-4 flex-col md:flex-row flex w-[90%] md:w-[80%] justify-between m-auto items-center'>
+              <div className='md:w-[50%] h-[350px] flex flex-col justify-center  overflow-hidden'>
+                <img className='w-[70%] overflow-hidden' src={result.detail.images[0]} alt="" />
               </div>
               <div className='md:w-[35%] space-y-4'>
                 <div className='text-xl font-semibold text-center'>{result.detail.title}</div>

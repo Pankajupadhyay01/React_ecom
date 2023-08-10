@@ -19,15 +19,14 @@ const Home = () => {
       {
         obj.loading ? <div className='w-[full] m-auto flex justify-center'>loading...</div>
           :
-          <div className='w-[95%] flex-col flex m-auto'>
+          <div>
             <Carousel />
-            <Heading name={"Top Rated"} />
-            <Toprated />
-            <Heading name={"Our Products"} />
-            <Displaycards />
-
-
-
+            <div className='w-[95%] flex-col flex m-auto'>
+              <Heading name={"Top Rated"} />
+              <Toprated />
+              <Heading name={"Our Products"} />
+              <Displaycards />
+            </div>
           </div>
       }
     </div>
