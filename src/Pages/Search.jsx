@@ -10,6 +10,7 @@ const Search = () => {
     const product = useParams().data;
     const loading = useSelector((state) => state.user.loading)
     const dispatch = useDispatch()
+    
     useEffect(() => {
         const api = `https://dummyjson.com/products/search?q=${product}`;
         productList({ api }, dispatch)

@@ -49,8 +49,16 @@ const Navbar = () => {
           {/* Links  */}
           <ul className='flex justify-center items-center space-x-4'>
             <li className={`list-none text-2xl md:text-3xl text-blue-800 flex items-center md:hidden`} onClick={() => setsearch(!search)}><ion-icon name={search ? "close-outline" : "search-outline"}></ion-icon></li>
-            <li className='list-none text-2xl md:text-3xl text-blue-800 flex items-center'><ion-icon name="cart-outline"></ion-icon></li>
-            <li className='list-none text-2xl md:text-3xl text-blue-800 flex items-center'><ion-icon name="person-outline"></ion-icon></li>
+            <li className='list-none text-2xl md:text-3xl text-blue-800 flex items-center'>
+              <Link to={"/cart"}>
+                <ion-icon name="cart-outline"></ion-icon>
+              </Link>
+            </li>
+            <li className='list-none text-2xl md:text-3xl text-blue-800 flex items-center'>
+              <Link to={"/cart"}>
+                <ion-icon name="person-outline"></ion-icon>
+              </Link>
+            </li>
           </ul>
 
         </div>

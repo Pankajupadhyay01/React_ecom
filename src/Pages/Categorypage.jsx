@@ -10,10 +10,12 @@ const Categorypage = () => {
   const name = useParams().data;
   const dispatch = useDispatch();
   const arr = useSelector((state) => state.user);
+
   useEffect(() => {
     const api = `https://dummyjson.com/products/category/${name}` 
     productList({ api }, dispatch)
   }, [name]) 
+  
   return (
     <div className='w-[95%] flex flex-col m-auto'>
       <Heading name={name} />

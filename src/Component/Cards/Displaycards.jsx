@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import ClockLoader  from "react-spinners/ClockLoader";
 
 const Displaycards = () => {
   const obj = useSelector((state) => state.user.product);
@@ -10,15 +10,17 @@ const Displaycards = () => {
       <div className=''>
 
         {obj == "" ?
-          <div className='h-[50vh] flex  items-center justify-center '>
-            <ClimbingBoxLoader
+          <div className='h-[50vh] flex flex-col items-center justify-center '>
+            <ClockLoader
 
               color={"blue"}
-              size={30}
+              size={100}
               aria-label="Loading Spinner"
               data-testid="loader"
             />
-            Opps... ! No such result found
+            <div className=' font-semibold'>
+              Oops... ! No such result found
+            </div>
           </div> :
           <div className='flex md:justify-around items-center justify-center m-auto w-full flex-wrap '>
 

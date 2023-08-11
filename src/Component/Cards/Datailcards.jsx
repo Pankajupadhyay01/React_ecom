@@ -1,17 +1,26 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom'
+import { Router, useNavigate, useParams } from 'react-router-dom'
 import { productDetail } from '../../redux/apiCall';
-import { Link } from 'react-router-dom'; 
+import { updateCart } from '../../redux/cart';
 const Datailcards = () => {
+
   const id = useParams().data;
   const dispatch = useDispatch()
   const result = useSelector((state) => state.user)
-  console.log();
+
   useEffect(() => {
     const api = `https://dummyjson.com/products/${id}`
     productDetail({ api }, dispatch)
   }, [id])
+  const navigate = useNavigate()
+  // Add to cart function  
+  const func = () => {
+    const detail= result.detail
+    dispatch(updateCart({detail}))
+    navigate("/cart")
+  }
+
   return (
     <>
       {
@@ -32,11 +41,11 @@ const Datailcards = () => {
                 </div>
                 <div className={`${result.detail.stock < 35 ? "text-red-500" : "text-blue-500"}`}>{result.detail.stock < 35 ? "few stock left" : "In Stock"}</div>
                 <div className='flex justify-center w-full space-x-4 items-center'>
-                  <Link className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]' href="">Add To Cart</Link>
-                  <Link className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]' href={`/buy/${id}`}>Buy Now</Link>
+                  <button onClick={func} className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]'>Add To Cart</button>
+                  <button className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]'>Buy Now</button>
                 </div>
               </div>
-            </div> 
+            </div>
           </div>
 
       }
