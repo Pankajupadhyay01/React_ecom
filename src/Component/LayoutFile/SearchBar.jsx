@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { productList } from "../../redux/apiCall";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const SearchBar = () => {
     const navigate = useNavigate();
     const [val, setval] = useState("");
-    const dispatch = useDispatch();
+    
     const func = (e) => {
         e.preventDefault();
-        const api = `https://dummyjson.com/products/search?q=${val}`;
-        productList({ api }, dispatch)
-        navigate("/search/"+val);
+        if (val != "") {
+            navigate("/search/" + val);
+        } else {
+            alert("Can't be Empty")
+        }
     }
     return (
         <div>

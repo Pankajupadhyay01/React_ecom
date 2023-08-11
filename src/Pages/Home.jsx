@@ -5,6 +5,7 @@ import Toprated from '../Component/Cards/Toprated';
 import Displaycards from '../Component/Cards/Displaycards';
 import Heading from '../Component/Heading';
 import Carousel from '../Component/Carousel';
+import Loading from '../Component/Loading';
 const Home = () => {
   const dispatch = useDispatch()
   const obj = useSelector((state) => state.user);
@@ -17,7 +18,7 @@ const Home = () => {
     <div className=''>
 
       {
-        obj.loading ? <div className='w-[full] m-auto flex justify-center'>loading...</div>
+        obj.loading ? <Loading/>
           :
           <div>
             <Carousel />

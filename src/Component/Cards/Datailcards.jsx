@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { productDetail } from '../../redux/apiCall';
-
+import { Link } from 'react-router-dom'; 
 const Datailcards = () => {
   const id = useParams().data;
   const dispatch = useDispatch()
@@ -18,9 +18,9 @@ const Datailcards = () => {
         result.loading ? "loading..." :
 
           <div >
-            <div className='my-4 flex-col md:flex-row flex w-[90%] md:w-[80%] justify-between m-auto items-center'>
-              <div className='md:w-[50%] h-[350px] flex flex-col justify-center  overflow-hidden'>
-                <img className='w-[70%] overflow-hidden' src={result.detail.images[0]} alt="" />
+            <div className='my-4 flex-col sm:flex-row flex w-[90%] md:w-[80%] m-auto items-center'>
+              <div className='md:w-[60%] h-[250px] md:h-[350px] flex flex-col justify-center items-center overflow-hidden'>
+                <img className='md:w-[70%] overflow-hidden' src={result.detail.thumbnail} alt="" />
               </div>
               <div className='md:w-[35%] space-y-4'>
                 <div className='text-xl font-semibold text-center'>{result.detail.title}</div>
@@ -28,16 +28,15 @@ const Datailcards = () => {
                 <div>{result.detail.description}</div>
                 <div className='flex justify-between items-center'>
                   <div className='font-bold'>${result.detail.price}</div>
-                  <div className='font-bold text-yellow-600 flex items-center'>{result.detail.rating > 4.5 ? "Top Rated" : result.detail.rating} </div>
+                  <div className='font-bold text-yellow-600 flex items-center'>⭐{result.detail.rating > 4.5 ? "Top Rated" : result.detail.rating} </div>
                 </div>
                 <div className={`${result.detail.stock < 35 ? "text-red-500" : "text-blue-500"}`}>{result.detail.stock < 35 ? "few stock left" : "In Stock"}</div>
-                {/* <div className='flex justify-center space-x-4 items-center'>
-            <Link className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]' href="">Add To Cart</Link>
-            <Link className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]' href={`/buy/${id}`}>Buy Now</Link>
-          </div> */}
+                <div className='flex justify-center w-full space-x-4 items-center'>
+                  <Link className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]' href="">Add To Cart</Link>
+                  <Link className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]' href={`/buy/${id}`}>Buy Now</Link>
+                </div>
               </div>
-            </div>
-
+            </div> 
           </div>
 
       }

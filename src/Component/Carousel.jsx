@@ -27,7 +27,7 @@ const Carousel = () => {
 
                         <div key={i} className='transition ease-in-out delay-150 w-[100vw] flex items-center justify-center '>
                             <div className='w-full object-cover h-full bg-blue-50'>
-                                <img className='h-full w-full' src={pro.img} alt="Crousel Banner" srcSet="" /> 
+                                <img className='h-full w-full' src={pro.img} alt="Crousel Banner" srcSet={pro.img} /> 
                             </div>
                         </div>
                     ))

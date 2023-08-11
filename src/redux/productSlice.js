@@ -6,7 +6,7 @@ const counterSlice = createSlice({
     product: [],
     detail: [],
     err: false,
-    loading: false,
+    loading: true,
     menu: false
   },
   reducers: {

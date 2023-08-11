@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { productList } from '../redux/apiCall'
 import Displaycards from '../Component/Cards/Displaycards'
+import Loading from '../Component/Loading'
 
 const Categorypage = () => {
   const name = useParams().data;
@@ -18,7 +19,7 @@ const Categorypage = () => {
       <Heading name={name} />
       {
         arr.loading ?
-          <div>loading..</div>
+          <div><Loading/></div>
           :
           <div>
             <Displaycards/>
