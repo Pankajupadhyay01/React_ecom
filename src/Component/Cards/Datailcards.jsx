@@ -13,10 +13,13 @@ const Datailcards = () => {
     const api = `https://dummyjson.com/products/${id}`
     productDetail({ api }, dispatch)
   }, [id])
+  
   const navigate = useNavigate()
+
   // Add to cart function  
   const func = () => {
     const detail= result.detail
+ 
     dispatch(updateCart({detail}))
     navigate("/cart")
   }
