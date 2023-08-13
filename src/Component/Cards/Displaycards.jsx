@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import ClockLoader  from "react-spinners/ClockLoader";
+import ClockLoader from "react-spinners/ClockLoader";
 
 const Displaycards = () => {
   const obj = useSelector((state) => state.user.product);

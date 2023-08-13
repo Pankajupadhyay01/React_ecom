@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Router, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { productDetail } from '../../redux/apiCall';
 import { updateCart } from '../../redux/cart';
 const Datailcards = () => {
@@ -19,8 +19,8 @@ const Datailcards = () => {
   // Add to cart function  
   const func = () => {
     const detail= result.detail
- 
-    dispatch(updateCart({detail}))
+    const qyt= 1
+    dispatch(updateCart({detail,qyt}))
     navigate("/cart")
   }
 
