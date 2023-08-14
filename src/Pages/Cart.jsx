@@ -1,25 +1,18 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeCart, setInc, setdec } from '../redux/cart'
+import { removeCart } from '../redux/cart'
 import Heading from '../Component/Heading'
+import { useNavigate } from 'react-router-dom'
+import Quantity from '../Component/Quantity'
 
 const Cart = () => {
   const data = useSelector((state) => state.cart)
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   // remove from cart function 
   const func = (id) => {
     dispatch(removeCart({ id }))
-  }
-
-  // quantity increment decrement function 
-  const qyt_func = (id, way) => {
-    if (way == "inc") {
-      dispatch(setInc({ id }))
-    }
-    else {
-      dispatch(setdec({ id }))
-    }
   }
 
   return (
@@ -37,6 +30,7 @@ const Cart = () => {
 
 
                 <div className='mx-10 w-full flex sm:flex-row flex-col justify-center items-center md:justify-between'>
+
                   {/* left container */}
                   <div className=''>
                     <div className='text-lg font-bold'>
@@ -47,21 +41,12 @@ const Cart = () => {
 
                   {/* right container */}
                   <div className='flex flex-col justify-center items-center space-y-2'>
-                    <div className=' flex justify-center items-center text-center'>
-                      <span className='bg-blue-800 w-[30px] text-white text-lg cursor-pointer' onClick={() => qyt_func(pro.detail.id, "decr")}>
-                        -
-                      </span>
-                      <input className='w-[60px] border-2 text-center' onChange={() => pro.qyt} value={pro.qyt} type="text" />
-                      <span className='bg-blue-800 w-[30px] text-white text-lg cursor-pointer' onClick={() => qyt_func(pro.detail.id, "inc")}>
-                        +
-                      </span>
-
-                    </div>
+                    <Quantity value={pro.qyt} id={pro.detail.id} />
 
                     <div>
                       $ {pro.detail.price * pro.qyt}
-
                     </div>
+
                   </div>
 
                 </div>
@@ -69,9 +54,9 @@ const Cart = () => {
               {/* cart product detail div ended */}
 
               {/* buy now and remove button  */}
-              <div className='flex space-x-8 my-2'>
+              <div className='flex space-x-8 my-2 md:justify-normal justify-center'>
                 <button className='flex bg-blue-800 border-1 px-3 text-white font-medium py-1' onClick={() => func(pro.detail.id)}>Remove</button>
-                <button className='flex bg-blue-800 border-1 px-3 text-white font-medium py-1'>Buy Now</button>
+                <button className='flex bg-blue-800 border-1 px-3 text-white font-medium py-1' onClick={() => navigate("/checkout")}>Checkout</button>
               </div>
 
             </div>
