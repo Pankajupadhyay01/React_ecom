@@ -6,7 +6,7 @@
 
 <h2>🚀 Demo</h2>
 
-[Demo Link ](stunning-cat-72f2e9.netlify.app)
+[Demo Link ](https://stunning-cat-72f2e9.netlify.app/)
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
