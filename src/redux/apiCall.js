@@ -1,5 +1,6 @@
 import axios from "axios"
 import { updateStart, updateProduct, updateErr, updateDetail } from './productSlice';
+// fetching api for home and search page 
 export const productList = async ({ api }, dispatch) => {
     dispatch(updateStart())
     try {
@@ -11,6 +12,8 @@ export const productList = async ({ api }, dispatch) => {
     }
 }
 
+
+//fetching single product api using id  
 export const productDetail = async ({ api }, dispatch) => {
     dispatch(updateStart())
     try {

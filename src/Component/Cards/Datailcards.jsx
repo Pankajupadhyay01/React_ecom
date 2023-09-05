@@ -24,6 +24,12 @@ const Datailcards = () => {
     navigate("/cart")
   }
 
+  // checkout 
+
+  const Checkout = () => {
+    navigate("/checkout")
+  }
+
   return (
     <>
       {
@@ -45,7 +51,7 @@ const Datailcards = () => {
                 <div className={`${result.detail.stock < 35 ? "text-red-500" : "text-blue-500"}`}>{result.detail.stock < 35 ? "few stock left" : "In Stock"}</div>
                 <div className='flex justify-center w-full space-x-4 items-center'>
                   <button onClick={func} className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]'>Add To Cart</button>
-                  <button className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]' onClick={() => navigate("/checkout")}>Buy Now</button>
+                  <button onClick={Checkout} className='cursor-pointer border-2 rounded-[20px] p-[4px_12px] hover:bg-blue-400 hover:shadow-2xl text-white bg-[#388e3c]'>Buy Now</button>
                 </div>
               </div>
             </div>
