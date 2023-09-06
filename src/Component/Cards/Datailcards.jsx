@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
 import { productDetail } from '../../redux/apiCall';
 import { updateCart } from '../../redux/cart';
+import { updateBuy } from '../../redux/checkout';
 const Datailcards = () => {
 
   const id = useParams().data;
@@ -17,17 +18,18 @@ const Datailcards = () => {
   const navigate = useNavigate()
 
   // Add to cart function  
+  const qyt = 1
   const func = () => {
     const detail = result.detail
-    const qyt = 1
     dispatch(updateCart({ detail, qyt }))
     navigate("/cart")
   }
 
   // checkout 
-
   const Checkout = () => {
-    navigate("/checkout")
+    const detail = result.detail
+    dispatch(updateBuy({ detail, qyt }))
+    navigate("/Checkout")
   }
 
   return (

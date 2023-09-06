@@ -4,7 +4,7 @@ import { removeCart } from '../redux/cart'
 import Heading from '../Component/Heading'
 import { useNavigate } from 'react-router-dom'
 import Quantity from '../Component/Quantity'
-
+import { updateBuy } from '../redux/checkout'
 const Cart = () => {
   const data = useSelector((state) => state.cart)
   const navigate = useNavigate()
@@ -13,6 +13,13 @@ const Cart = () => {
   // remove from cart function 
   const func = (id) => {
     dispatch(removeCart({ id }))
+  }
+
+  // checkout 
+  const checkout = (id, qyt) => { 
+    const detail = data.cart.find((item)=>item.detail.id == id).detail
+    dispatch(updateBuy({detail , qyt}))
+    navigate("/Checkout") 
   }
 
   return (
@@ -56,7 +63,7 @@ const Cart = () => {
               {/* buy now and remove button  */}
               <div className='flex space-x-8 my-2 md:justify-normal justify-center'>
                 <button className='flex bg-blue-800 border-1 px-3 text-white font-medium py-1' onClick={() => func(pro.detail.id)}>Remove</button>
-                <button className='flex bg-blue-800 border-1 px-3 text-white font-medium py-1' onClick={() => navigate("/checkout")}>Checkout</button>
+                <button className='flex bg-blue-800 border-1 px-3 text-white font-medium py-1' onClick={() => checkout(pro.detail.id, pro.qyt)}>Checkout</button>
               </div>
 
             </div>
