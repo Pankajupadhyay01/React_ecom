@@ -10,17 +10,22 @@ const counterSlice = createSlice({
     menu: false
   },
   reducers: {
+
     updatemenu: (state) => {
       state.menu = !state.menu
     },
     updateStart: (state) => {
       state.loading = true
     },
+
+    // ALl/Search/category Product data store here
     updateProduct: (state, action) => {
       state.product = []
       state.loading = false
       state.product = action.payload.products
     },
+
+    // Single product store here
     updateDetail: (state, action) => {
       state.detail = []
       state.loading = false

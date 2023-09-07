@@ -7,8 +7,7 @@ const counterSlice = createSlice({
         qyt:1
     },
     reducers: {
-        updateBuy : (state , action )=>{
-            console.log(action.payload);
+        updateBuy : (state , action )=>{ 
             state.userPurchase = []
             state.userPurchase = action.payload.detail;
             state.qyt = action.payload.qyt
