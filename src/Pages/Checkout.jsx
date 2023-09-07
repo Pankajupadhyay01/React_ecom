@@ -1,16 +1,9 @@
 import React from 'react'
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux' 
 import Checkoutdetail from '../Component/Cards/Checkoutdetail'
 const Checkout = () => {
-  const data = useSelector((state) => state.checkout)
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (data.length === 0) {
-      navigate("/")
-    }
-  }, [data])
+  const data = useSelector((state) => state.checkout)  
 
 
   return (

@@ -53,7 +53,17 @@ const Checkoutdetail = () => {
               </div>
             </div>
           </div>
-        </div> 
+        </div>
+      </div>
+
+      <div>
+        <div className='md:text-[24px] font- bg-blue-100 mb-2 text-black font-medium px-[10px] text-[22px]' >
+          Payment
+        </div>
+        <div className='sm:flex w-full items-center justify-between'>
+          This is a Front End Project. You can check the functionality of Add to cart/Checkout/seach
+          <span className='text-[28px] text-green-800'>Thank You </span>
+        </div>
       </div>
     </>
   )
